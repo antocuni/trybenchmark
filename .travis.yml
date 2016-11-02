@@ -12,4 +12,4 @@ install:
 
 script:
   - py.test --benchmark-autosave
-  - bash ./travis/commit-results
+  - bash ./travis/commit-results.sh
