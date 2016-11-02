@@ -16,6 +16,7 @@ eval `ssh-agent -s`
 ssh-add ./travis/travis.rsa
 
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+git rm --cached -r .
 git add .benchmarks
 git commit -m "add benchmark results for commit $SHA"
 git push $SSH_REPO $TARGET_BRANCH
