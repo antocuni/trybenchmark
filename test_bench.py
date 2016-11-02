@@ -7,7 +7,7 @@ def test_pystone(benchmark):
 def test_sum(benchmark):
     def fn():
         x = 0
-        for i in range(1000000):
+        for i in range(1200000):
             x += i
         return i
     benchmark(fn)
