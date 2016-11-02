@@ -5,7 +5,6 @@ SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SHA=`git rev-parse --verify HEAD`
 EMAIL=`git --no-pager show -s --format='<%ae>' HEAD`
 
-echo "SSH_REPO: $SSH_REPO"
 git remote set-url origin $SSH_REPO
 git config --global push.default simple
 git config --global user.email "$EMAIL"
@@ -15,6 +14,7 @@ chmod 600 ./travis/travis.rsa
 eval `ssh-agent -s`
 ssh-add ./travis/travis.rsa
 
+git checkout benchmarks || git checkout --orphan benchmarks
 git add .benchmarks
 git commit -m "add benchmark results for commit $SHA"
 git push
