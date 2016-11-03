@@ -7,10 +7,6 @@ set -v
 SHA=`git rev-parse --verify HEAD`
 EMAIL=`git --no-pager show -s --format='<%ae>' HEAD`
 
-git config push.default simple
-git config user.email "$EMAIL"
-git config user.name "Travis CI"
-
 # setup ssh auth
 chmod 600 ./travis/travis.rsa
 eval `ssh-agent -s`
@@ -21,6 +17,10 @@ cd .benchmarks
 REPO=`git config remote.origin.url`
 TARGET_BRANCH=benchmarks
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
+
+git config push.default simple
+git config user.email "$EMAIL"
+git config user.name "Travis CI"
 
 # git fetch origin $TARGET_BRANCH:$TARGET_BRANCH
 # git checkout $TARGET_BRANCH || (git checkout --orphan $TARGET_BRANCH; git rm --cached -r .)
