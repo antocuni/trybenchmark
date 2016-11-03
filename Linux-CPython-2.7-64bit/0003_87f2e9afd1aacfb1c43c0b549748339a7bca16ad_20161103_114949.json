@@ -1,0 +1,87 @@
+{
+    "commit_info": {
+        "id": "87f2e9afd1aacfb1c43c0b549748339a7bca16ad", 
+        "dirty": false
+    }, 
+    "version": "3.0.0", 
+    "benchmarks": [
+        {
+            "stats": {
+                "q1": 0.43992626667022705, 
+                "q3": 0.44162416458129883, 
+                "iterations": 1, 
+                "min": 0.43953394889831543, 
+                "max": 0.44163990020751953, 
+                "median": 0.44030213356018066, 
+                "iqr": 0.0016978979110717773, 
+                "stddev_outliers": 3, 
+                "ld15iqr": 0.43953394889831543, 
+                "stddev": 0.0009532795536063537, 
+                "hd15iqr": 0.44163990020751953, 
+                "outliers": "3;0", 
+                "iqr_outliers": 0, 
+                "rounds": 5, 
+                "mean": 0.4406303882598877
+            }, 
+            "name": "test_pystone", 
+            "params": null, 
+            "group": null, 
+            "fullname": "tmp/trybenchmark/test_bench.py::test_pystone", 
+            "options": {
+                "disable_gc": false, 
+                "warmup": false, 
+                "timer": "time", 
+                "min_rounds": 5, 
+                "max_time": 1.0, 
+                "min_time": 5e-06
+            }
+        }, 
+        {
+            "stats": {
+                "q1": 0.0659019947052002, 
+                "q3": 0.06631088256835938, 
+                "iterations": 1, 
+                "min": 0.06546187400817871, 
+                "max": 0.06796503067016602, 
+                "median": 0.06601238250732422, 
+                "iqr": 0.0004088878631591797, 
+                "stddev_outliers": 3, 
+                "ld15iqr": 0.06546187400817871, 
+                "stddev": 0.0007128464500440749, 
+                "hd15iqr": 0.06760406494140625, 
+                "outliers": "3;2", 
+                "iqr_outliers": 2, 
+                "rounds": 14, 
+                "mean": 0.06624879155840192
+            }, 
+            "name": "test_sum", 
+            "params": null, 
+            "group": null, 
+            "fullname": "tmp/trybenchmark/test_bench.py::test_sum", 
+            "options": {
+                "disable_gc": false, 
+                "warmup": false, 
+                "timer": "time", 
+                "min_rounds": 5, 
+                "max_time": 1.0, 
+                "min_time": 5e-06
+            }
+        }
+    ], 
+    "machine_info": {
+        "node": "homer", 
+        "machine": "x86_64", 
+        "python_implementation_version": "2.7.12", 
+        "python_version": "2.7.12", 
+        "release": "4.4.0-42-generic", 
+        "python_compiler": "GCC 5.4.0 20160609", 
+        "python_implementation": "CPython", 
+        "python_build": [
+            "default", 
+            "Jul  1 2016 15:12:24"
+        ], 
+        "processor": "x86_64", 
+        "system": "Linux"
+    }, 
+    "datetime": "2016-11-03T10:49:54.738287"
+}
