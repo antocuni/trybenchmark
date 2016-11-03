@@ -1,0 +1,80 @@
+{
+    "commit_info": {
+        "id": "a412daa460a8779e96b45c7e79d57293ccc8d606", 
+        "dirty": false
+    }, 
+    "version": "3.0.0", 
+    "benchmarks": [
+        {
+            "stats": {
+                "q1": 0.4420889616012573, 
+                "q3": 0.4456599950790405, 
+                "iterations": 1, 
+                "min": 0.43984198570251465, 
+                "max": 0.4462089538574219, 
+                "median": 0.4446840286254883, 
+                "iqr": 0.003571033477783203, 
+                "stddev_outliers": 1, 
+                "ld15iqr": 0.43984198570251465, 
+                "stddev": 0.002548913287255012, 
+                "hd15iqr": 0.4462089538574219, 
+                "outliers": "1;0", 
+                "iqr_outliers": 0, 
+                "rounds": 5, 
+                "mean": 0.44380998611450195
+            }, 
+            "fullname": "test_bench.py::test_pystone", 
+            "group": null, 
+            "name": "test_pystone", 
+            "options": {
+                "disable_gc": false, 
+                "warmup": false, 
+                "timer": "time", 
+                "min_rounds": 5, 
+                "max_time": 1.0, 
+                "min_time": 5e-06
+            }
+        }, 
+        {
+            "stats": {
+                "q1": 0.07012283802032471, 
+                "q3": 0.07568734884262085, 
+                "iterations": 1, 
+                "min": 0.06944584846496582, 
+                "max": 0.09798908233642578, 
+                "median": 0.07128596305847168, 
+                "iqr": 0.005564510822296143, 
+                "stddev_outliers": 2, 
+                "ld15iqr": 0.06944584846496582, 
+                "stddev": 0.01026373752866319, 
+                "hd15iqr": 0.08566999435424805, 
+                "outliers": "2;3", 
+                "iqr_outliers": 3, 
+                "rounds": 13, 
+                "mean": 0.07601626102740948
+            }, 
+            "fullname": "test_bench.py::test_sum", 
+            "group": null, 
+            "name": "test_sum", 
+            "options": {
+                "disable_gc": false, 
+                "warmup": false, 
+                "timer": "time", 
+                "min_rounds": 5, 
+                "max_time": 1.0, 
+                "min_time": 5e-06
+            }
+        }
+    ], 
+    "machine_info": {
+        "node": "testing-worker-linux-docker-85efcc1c-3451-linux-12", 
+        "machine": "x86_64", 
+        "python_version": "2.7.9", 
+        "release": "3.13.0-40-generic", 
+        "python_compiler": "GCC 4.6.3", 
+        "python_implementation": "CPython", 
+        "processor": "x86_64", 
+        "system": "Linux"
+    }, 
+    "datetime": "2016-11-03T11:13:38.079634"
+}
