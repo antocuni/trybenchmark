@@ -8,6 +8,7 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_7f8115fa5d54_key -iv $encrypted_7f8115fa5d54_iv -in ./travis/travis.rsa.enc -out ./travis/travis.rsa -d
 
 install:
+  - pip install -U pip
   - pip install git+https://github.com/antocuni/pytest-benchmark.git#egg=pytest-benchmark
 #  - pip install pytest-benchmark
 
