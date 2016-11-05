@@ -9,6 +9,10 @@ addons:
     packages:
       - ucspi-tcp # for tcp server
 
+env:
+  global:
+    - export PATH="$PATH:$HOME/bin:$TRAVIS_BUILD_DIR/travis/bin"
+
   
 before_install:
   - openssl aes-256-cbc -K $encrypted_7f8115fa5d54_key -iv $encrypted_7f8115fa5d54_iv -in ./travis/travis.rsa.enc -out ./travis/travis.rsa -d
