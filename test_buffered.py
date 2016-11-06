@@ -27,7 +27,7 @@ class TestBuffered(object):
         # start tcpserver
         cmd = ['tcpserver', '127.0.0.1', str(self.PORT),
                'cat', str(mystream)]
-        p = subprocess.Popen(cmd)
+        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         #
         # stop tcpserver
         def finalize():
@@ -40,7 +40,10 @@ class TestBuffered(object):
                 pass
             if p.returncode is None:
                 print 'communicate'
-                p.communicate()
+                stdout, stderr = p.communicate()
+                print p.returncode
+                print stdout
+                print stderr
                 print 'done'
         request.addfinalizer(finalize)
 
