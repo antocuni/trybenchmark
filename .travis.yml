@@ -26,4 +26,4 @@ script:
   # - bash ./travis/clone-benchmarks-repo.sh
   # - py.test --benchmark-autosave
   # - bash ./travis/commit-results.sh
-  - py.test test_buffered -s
+  - py.test test_buffered.py -s

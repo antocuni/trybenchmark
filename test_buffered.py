@@ -45,13 +45,22 @@ class TestBuffered(object):
         request.addfinalizer(finalize)
 
     def test_one(self):
+        print
+        print 'test_one'
         for i in range(5):
             sock = socket.create_connection(('127.0.0.1', self.PORT))
+            print i
 
     def test_two(self):
+        print
+        print 'test_two'
         for i in range(5):
             sock = socket.create_connection(('127.0.0.1', self.PORT))
+            print i
 
     def test_three(self):
+        print
+        print 'test_three'
         for i in range(5):
             sock = socket.create_connection(('127.0.0.1', self.PORT))
+            print i
