@@ -13,9 +13,9 @@ class TestBuffered(object):
     SIZE = 1 * (1024*1024) # MB
     PORT = 5000
 
-    @pytest.fixture
-    def initargs(self, request, tmpdir):
-        self.tmpdir = tmpdir
+    @pytest.fixture(scope='class')
+    def initargs(self, request, tmpdir_factory):
+        tmpdir = tmpdir_factory.mktemp('buffered')
         # create the file to serve
         mystream = tmpdir.join('mystream')
         with mystream.open('wb') as f:
@@ -27,7 +27,7 @@ class TestBuffered(object):
         # start tcpserver
         cmd = ['tcpserver', '127.0.0.1', str(self.PORT),
                'cat', str(mystream)]
-        p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        p = subprocess.Popen(cmd)
         #
         # stop tcpserver
         def finalize():
