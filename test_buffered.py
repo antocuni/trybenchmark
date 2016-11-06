@@ -44,23 +44,37 @@ class TestBuffered(object):
                 print 'done'
         request.addfinalizer(finalize)
 
-    def test_one(self):
-        print
-        print 'test_one'
-        for i in range(5):
-            sock = socket.create_connection(('127.0.0.1', self.PORT))
-            print i
+    def do_benchmark(self, benchmark, open_connection):
+        def count_bytes():
+            f = open_connection()
+            tot = 0
+            while True:
+                s = f.read(1)
+                if s == '':
+                    break
+                tot += len(s)
+            return tot
 
-    def test_two(self):
-        print
-        print 'test_two'
-        for i in range(5):
-            sock = socket.create_connection(('127.0.0.1', self.PORT))
-            print i
+        res = benchmark(count_bytes)
+        assert res == self.SIZE
 
-    def test_three(self):
-        print
-        print 'test_three'
-        for i in range(5):
+    @pytest.mark.benchmark(group="buffered")
+    def test_makefile(self, benchmark):
+        def open_connection():
             sock = socket.create_connection(('127.0.0.1', self.PORT))
-            print i
+            return sock.makefile()
+        self.do_benchmark(benchmark, open_connection)
+
+    @pytest.mark.benchmark(group="buffered")
+    def test_makefile_2(self, benchmark):
+        def open_connection():
+            sock = socket.create_connection(('127.0.0.1', self.PORT))
+            return sock.makefile()
+        self.do_benchmark(benchmark, open_connection)
+
+    @pytest.mark.benchmark(group="buffered")
+    def test_makefile_3(self, benchmark):
+        def open_connection():
+            sock = socket.create_connection(('127.0.0.1', self.PORT))
+            return sock.makefile()
+        self.do_benchmark(benchmark, open_connection)
