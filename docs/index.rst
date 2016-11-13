@@ -14,7 +14,14 @@ This is an example of pygal chart:
    chart.title = 'Horizontal Bar Chart with Rotated Y Labels'
    chart.x_labels = 'one', 'two', 'three', 'four', 'five'
    chart.add('alpha', [1, 2, 3, 1, 2])
-   chart.add('beta', [4, 3, 0, 1, 2])
+   chart.add('beta', [4, 3, 0, 1, {
+            'value': 3,
+            'ci': {
+                'type': 'continuous',
+                'sample_size': 4,
+                'stddev': 0.1,
+            }
+        }])
 
 Contents:
 
