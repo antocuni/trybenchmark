@@ -34,7 +34,7 @@ import os, sys
 sys.path.append(os.path.abspath('ext'))
 
 extensions = [
-    'pygal_sphinx_directives'
+#    'pygal_sphinx_directives'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
