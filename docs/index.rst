@@ -6,7 +6,15 @@
 Welcome to trybenchmarks's documentation!
 =========================================
 
-bla bla bla
+This is an example of pygal chart:
+
+.. pygal::
+
+   chart = pygal.HorizontalBar(y_label_rotation=-25)
+   chart.title = 'Horizontal Bar Chart with Rotated Y Labels'
+   chart.x_labels = 'one', 'two', 'three', 'four', 'five'
+   chart.add('alpha', [1, 2, 3, 1, 2])
+   chart.add('beta', [4, 3, 0, 1, 2])
 
 Contents:
 
