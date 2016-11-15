@@ -25,3 +25,17 @@ def test_cpu():
         mycpu = int(mycpu)
         usage = psutil.cpu_percent(0.1, percpu=True)
         print 'CPU', mycpu, usage[mycpu:mycpu+1]
+
+def test_cgroup():
+    import py
+    d = py.path.local('/sys/fs/cgroup/')
+    for f in d.visit():
+        if f.check(file=False):
+            continue
+        try:
+            s = f.read().strip()
+        except py.error.Error, e:
+            s = str(e)
+        if '\n' in s:
+            s = s.splitlines()[0] + '...'
+        print f, s
