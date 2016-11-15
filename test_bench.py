@@ -47,7 +47,7 @@ def xtest_cgroup():
 def worker():
     from test import pystone
     a = time.time()
-    pystone.pystones()
+    pystone.pystones(200000)
     b = time.time()
     print '%.2f' % (b-a)
 
@@ -61,7 +61,7 @@ def test_multiprocess():
         for job in jobs:
             job.join()
 
-    for N in (1, 2, 4, 8, 16, 32):
+    for N in (1, 2, 4, 8, 16, 32, 64, 128):
         print 'N =', N
         many(N)
         print
