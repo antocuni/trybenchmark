@@ -20,10 +20,11 @@ before_install:
 install:
   - pip install -U pip setuptools
   - pip install git+https://github.com/antocuni/pytest-benchmark.git#egg=pytest-benchmark
+  - pip install psutil
 #  - pip install pytest-benchmark
 
 script:
   # - bash ./travis/clone-benchmarks-repo.sh
   # - py.test --benchmark-autosave
   # - bash ./travis/commit-results.sh
-  - py.test test_buffered.py -s
+  - py.test test_bench.py -s

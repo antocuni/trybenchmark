@@ -1,3 +1,4 @@
+import time
 from test import pystone
 
 def test_pystone(benchmark):
@@ -11,3 +12,8 @@ def test_sum(benchmark):
             x += i
         return i
     benchmark(fn)
+
+def test_cpu():
+    import psutil
+    for i in range(100):
+        print 'CPU:', psutil.cpu_percent(0.1, percpu=True)
